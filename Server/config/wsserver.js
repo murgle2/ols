@@ -8,25 +8,25 @@ const sendTo = (connection, message) => {
 };
 
 wss.on('connection', (connection) => {
-	console.log("user connected");
+	console.log('user connected');
 
 	connection.on('message', (message) => {
 		let data;
-		console.log("Got message: ", message);
+		console.log('Got message: ', message);
 
 		try {
 			data = JSON.parse(message);
 		} catch (e) {
-			console.log("Invalid JSON");
+			console.log('Invalid JSON');
 			data = {};
 		}
 
 		// Check the negative case first; change order
-		if (data.type === "login") {
-			console.log("User logged:", data.name);
+		if (data.type === 'login') {
+			console.log('User logged:', data.name);
 			if (users[data.name]) {
 				sendTo(connection, {
-					type: "login",
+					type: 'login',
 					success: false
 				});
 			} else {
@@ -34,14 +34,14 @@ wss.on('connection', (connection) => {
 				connection.name = data.name;
 
 				sendTo(connection, {
-					type: "login",
+					type: 'login',
 					success: true
 				});
 			}
 		} else {
 			sendTo(connection, {
-				type: "error",
-				message: "Command not found: " + data.type
+				type: 'error',
+				message: 'Command not found: ' + data.type
 			});
 		}
 	});
@@ -50,8 +50,8 @@ wss.on('connection', (connection) => {
 		if (connection.name) {
 			delete users[connection.name];
 		}
-		console.log("closed");
+		console.log('closed');
 	});
 
-	connection.send("Hi from server");
+	connection.send('Hi from server');
 });

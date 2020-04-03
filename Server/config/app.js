@@ -5,7 +5,8 @@ const createError = require('http-errors'),
 	logger = require('morgan'),
 	rootPath = path.normalize(__dirname + '/..'),
 	app = express(),
-	http = require('http');
+	http = require('http'),
+	wsserver = require('wsserver');
 
 const server = http.createServer(app);
 server.listen(3003);
