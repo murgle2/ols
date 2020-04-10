@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <video controls>
-      <source src="../../assets/sample.mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <VideoPlayer />
   </div>
 </template>
 
 <script>
 import { HTTP } from '../../http-constants';
+import VideoPlayer from './Video/VideoPlayer';
+
 export default {
   name: 'Video.vue',
+  components: {
+    VideoPlayer
+  },
   data() {
     return {
       users: '',
@@ -32,9 +34,4 @@ export default {
 };
 </script>
 
-<style scoped>
-video {
-  outline: none;
-  width: 100%;
-}
-</style>
+<style></style>
