@@ -9,7 +9,6 @@
       autoplay
       data-setup='{ "aspectRatio":"16:9" }'
       style="outline: none"
-      src="../../../assets/sample.mp4"
     ></video>
   </div>
 </template>
@@ -21,7 +20,7 @@ export default {
   data() {
     return {
       player: '',
-      //url: 'http://192.168.1.13:5080/LiveApp/streams/xd.m3u8',
+      url: process.env.VUE_APP_STREAM_URL,
       volume: 1
     };
   },
