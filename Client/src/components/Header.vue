@@ -17,10 +17,6 @@
       </b-navbar-brand>
       <b-navbar-brand href="#">Clips</b-navbar-brand>
 
-      <b-navbar-brand class="center">
-        <h4>Center</h4>
-      </b-navbar-brand>
-
       <b-navbar-nav class="ml-auto">
         <b-dropdown right no-caret>
           <template v-slot:button-content>

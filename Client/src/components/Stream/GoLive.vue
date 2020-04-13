@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>You are Live!</h1>
+    <h1>App coming soon!</h1>
   </div>
 </template>
 
