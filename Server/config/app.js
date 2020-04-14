@@ -5,9 +5,12 @@ const createError = require('http-errors'),
 	logger = require('morgan'),
 	rootPath = path.normalize(__dirname + '/..'),
 	app = express(),
-	http = require('http'),
-	wsserver = require('wsserver');
+	http = require('http');
 
+// Start websocket server
+require('./wsserver');
+
+// Express code
 const server = http.createServer(app);
 server.listen(3003);
 
@@ -20,18 +23,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('../routes'));
 
 
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
 });
 
-// error handler
+// Error handler
 app.use((err, req, res, next) => {
-	// set locals, only providing error in development
+	// Set locals, only providing error in development
 	// res.locals.message = err.message;
 	// res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-	// render the error page
+	// Render the error page
 	res.status(err.status || 500);
 	res.sendStatus(err.status || 500);
 });
