@@ -20,7 +20,7 @@ export default {
 <style scoped>
 #app {
   text-align: center;
-  color: #b0faff;
+  color: white;
 }
 
 p {

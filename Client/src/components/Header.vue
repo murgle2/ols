@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
+    <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
       <b-navbar-brand href="#">
         <router-link to="/">
           <img
@@ -47,8 +47,5 @@ export default {
 }
 .add-padding {
   padding-top: 55px;
-}
-h4 {
-  color: blueviolet;
 }
 </style>
