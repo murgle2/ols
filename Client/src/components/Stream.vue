@@ -2,7 +2,7 @@
   <div id="app">
     <b-container fluid="true" class="fill">
       <b-row no-gutters class="h-100">
-        <b-col lg="7" class="col-left d-flex flex-column">
+        <b-col lg="8" class="d-flex flex-column col-left">
           <b-row no-gutters>
             <Video v-if="!streamer" />
             <GoLive v-else />
@@ -15,11 +15,8 @@
             </div>
           </b-row>
         </b-col>
-        <b-col lg="3" class="col-middle">
+        <b-col lg="4" class="col-right">
           <Chat />
-        </b-col>
-        <b-col lg="2" class="col-right">
-          <h1>Popular Clips</h1>
         </b-col>
       </b-row>
     </b-container>
@@ -27,9 +24,9 @@
 </template>
 
 <script>
-import Video from './Stream/Video';
-import Chat from './Stream/Chat';
-import GoLive from './Stream/GoLive';
+import Video from './stream/Video';
+import Chat from './stream/Chat';
+import GoLive from './stream/GoLive';
 
 export default {
   name: 'Stream.vue',
@@ -41,8 +38,8 @@ export default {
   data() {
     return {
       streamer: false,
-      goLiveMessage: 'Want to Join the Stream?',
-      returnMessage: 'Return to Stream'
+      goLiveMessage: 'Want to Join the stream?',
+      returnMessage: 'Return to stream'
     };
   },
   methods: {
@@ -63,16 +60,10 @@ export default {
 .fill {
   min-height: 100%;
   height: 100%;
-  background-color: #ff342a;
-}
-
-.col-left {
-  background-color: #ffc86d;
 }
 
 .row-center {
   justify-content: center;
-  background-color: red;
 }
 
 .button-align {
@@ -81,15 +72,11 @@ export default {
   justify-content: center;
 }
 
-.col-middle {
-  background-color: blueviolet;
-  /*overflow-y: scroll;*/
-  /*height: 100%;*/
+.col-left {
+  /*margin-right: 0px;*/
 }
 
 .col-right {
-  background-color: #a8d08d;
-  /*overflow-y: scroll;*/
-  /*height: 100%;*/
+  min-height: 45%;
 }
 </style>
