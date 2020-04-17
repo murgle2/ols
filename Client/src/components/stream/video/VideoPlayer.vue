@@ -73,13 +73,13 @@ export default {
     },
 
     playerSetupEvents() {
-      this.player.on('ended', function() {
+      this.player.on('ended', () => {
         window.playerEvents.playerEventEnded();
       });
-      this.player.on('volumechange', function() {
+      this.player.on('volumechange', () => {
         window.playerEvents.playerEventVolume();
       });
-      this.player.on('error', function() {
+      this.player.on('error', () => {
         window.playerEvents.playerEventError();
       });
     }

@@ -6,7 +6,7 @@
 
 <script>
 import { HTTP } from '../../http-constants';
-import VideoPlayer from './Video/VideoPlayer';
+import VideoPlayer from './video/VideoPlayer';
 
 export default {
   name: 'Video.vue',
